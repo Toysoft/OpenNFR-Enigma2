@@ -748,7 +748,7 @@ void eDVBDB::loadServicelist(const char *file)
 		ePtr<eDVBService> s = new eDVBService;
 		s->m_service_name = line;
 		s->genSortName();
-is_id = NO_STREAM_ID_FILTER;
+
 		if (!fgets(line, sizeof(line), f))
 			break;
 		len = strlen(line); /* strip newline */
@@ -1375,7 +1375,7 @@ PyObject *eDVBDB::readSatellites(ePyObject sat_list, ePyObject sat_dict, ePyObje
 				inv = eDVBFrontendParametersSatellite::Inversion_Unknown;
 				pilot = eDVBFrontendParametersSatellite::Pilot_Unknown;
 				rolloff = eDVBFrontendParametersSatellite::RollOff_alpha_0_35;
-				is_id = NO_STREAM_ID_FILTER
+				is_id = NO_STREAM_ID_FILTER;
 				pls_code = 0;
 				pls_mode = eDVBFrontendParametersSatellite::PLS_Gold;
 				tsid = -1;
